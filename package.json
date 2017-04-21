@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-node-red-firebase",     "homepage": "https://github.com/npmtest/node-npmtest-node-red-firebase",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-node-red-firebase.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [node-red-firebase (v0.1.0)](https://github.com/yieme/node-red-firebase)  [![npm package](https://img.shields.io/npm/v/npmtest-node-red-firebase.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-node-red-firebase) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-node-red-firebase.svg)](https://travis-ci.org/npmtest/node-npmtest-node-red-firebase)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-node-red-firebase",
+    "keywords": [
+        "coverage",
+        "test",
+        "node-red-firebase"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_node_red_firebase.js",
+    "name": "npmtest-node-red-firebase",
+    "nameAlias": "npmtest_node_red_firebase",
+    "nameOriginal": "npmtest-node-red-firebase",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-node-red-firebase.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
